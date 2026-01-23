@@ -17,9 +17,9 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"), 
+  metadataBase:new URL(process.env.NEXT_PUBLIC_URL!),
   title: {
-    default: "Bhavit Raj - Full Stack Developer & Startup Builder",
+    default: "Bhavit Rajput - Full stack developer",
     template: "%s | Bhavit Raj Portfolio",
   },
   description:
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
     "Next.js Developer",
     "TypeScript Developer",
     "UI/UX Designer",
-    "Startup Founder",
+    "Startup Co-Founder",
     "E-commerce Developer",
     "Gamified UX",
     "Scalable Platforms",
     "Web Developer India",
     "Portfolio",
   ],
-  authors: [{ name: "Bhavit Raj", url: "https://yourdomain.com" }],
-  creator: "Bhavit Raj",
-  publisher: "Bhavit Raj",
+  authors: [{ name: "Bhavit Rajput", url: process.env.NEXT_PUBLIC_URL! }],
+  creator: "Bhavit Rajput",
+  publisher: "Bhavit Rajput",
   formatDetection: {
     email: false,
     address: false,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yourdomain.com",
+    url: process.env.NEXT_PUBLIC_URL!,
     title: "Bhavit Raj - Full Stack Developer & Startup Builder",
     description:
       "Portfolio of Bhavit Raj | Full-stack developer | Startup builder | Expert in React, Next.js, TypeScript, and scalable e-commerce solutions.",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: process.env.NEXT_PUBLIC_URL!,
   },
 }
 
@@ -103,7 +103,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Bhavit Raj",
-    url: "https://yourdomain.com",
+    url: process.env.NEXT_PUBLIC_URL!,
     image: "https://yourdomain.com/og-image.png",
     sameAs: [
       "https://twitter.com/your_twitter_handle",
@@ -114,7 +114,6 @@ export default function RootLayout({
     worksFor: {
       "@type": "Organization",
       name: "Your Startup Name",
-      url: "https://yourstartup.com",
     },
     description:
       "Full-stack developer specializing in React, Next.js, TypeScript, and scalable e-commerce platforms. Passionate about UI/UX and gamified experiences.",
