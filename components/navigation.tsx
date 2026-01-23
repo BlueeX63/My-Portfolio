@@ -30,7 +30,7 @@ export function Navigation({ scrollY }: NavigationProps) {
           {/* Pixel Logo */}
           <a href="#" className="flex items-center gap-3 group">
             <svg width="28" height="28" viewBox="0 0 32 32" className="text-[#00ff00]">
-
+              {/* Left vertical */}
               <rect x="4" y="4" width="4" height="4" fill="currentColor" />
               <rect x="4" y="8" width="4" height="4" fill="currentColor" />
               <rect x="4" y="12" width="4" height="4" fill="currentColor" />
@@ -38,24 +38,30 @@ export function Navigation({ scrollY }: NavigationProps) {
               <rect x="4" y="20" width="4" height="4" fill="currentColor" />
               <rect x="4" y="24" width="4" height="4" fill="currentColor" />
 
+              {/* Top bar */}
               <rect x="8" y="4" width="4" height="4" fill="currentColor" />
               <rect x="12" y="4" width="4" height="4" fill="currentColor" />
 
-              <rect x="12" y="8" width="4" height="4" fill="currentColor" />
-              <rect x="12" y="12" width="4" height="4" fill="currentColor" />
-              <rect x="8" y="12" width="4" height="4" fill="currentColor" />
+              {/* Top right curve */}
+              <rect x="16" y="8" width="4" height="4" fill="currentColor" />
+              <rect x="16" y="12" width="4" height="4" fill="currentColor" />
 
-              <rect x="8" y="16" width="4" height="4" fill="currentColor" />
-              <rect x="12" y="16" width="4" height="4" fill="currentColor" />
+              {/* Middle bar */}
+              <rect x="8" y="14" width="4" height="4" fill="currentColor" />
+              <rect x="12" y="14" width="4" height="4" fill="currentColor" />
 
+              {/* Bottom right curve */}
+              <rect x="16" y="18" width="4" height="4" fill="currentColor" />
+              <rect x="16" y="22" width="4" height="4" fill="currentColor" />
 
-              <rect x="12" y="20" width="4" height="4" fill="currentColor" />
-              <rect x="12" y="24" width="4" height="4" fill="currentColor" />
+              {/* Bottom bar */}
               <rect x="8" y="24" width="4" height="4" fill="currentColor" />
+              <rect x="12" y="24" width="4" height="4" fill="currentColor" />
 
-
+              {/* Optional blinking pixel */}
               <rect x="24" y="24" width="4" height="4" fill="currentColor" className="animate-pulse" />
             </svg>
+
             <span className="font-pixel text-[8px] sm:text-[10px] text-[#00ff00] tracking-wide group-hover:text-glow transition-all">
               BLUEE
             </span>

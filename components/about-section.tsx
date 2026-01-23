@@ -66,22 +66,37 @@ export function AboutSection() {
 
                 {/* Pixel P Logo */}
                 <svg
-                  viewBox="0 0 32 32"
-                  className="absolute inset-4 text-[#00ff00]/20"
-                >
-                  <rect x="4" y="4" width="4" height="4" fill="currentColor" />
-                  <rect x="4" y="8" width="4" height="4" fill="currentColor" />
-                  <rect x="4" y="12" width="4" height="4" fill="currentColor" />
-                  <rect x="4" y="16" width="4" height="4" fill="currentColor" />
-                  <rect x="4" y="20" width="4" height="4" fill="currentColor" />
-                  <rect x="4" y="24" width="4" height="4" fill="currentColor" />
-                  <rect x="8" y="4" width="4" height="4" fill="currentColor" />
-                  <rect x="12" y="4" width="4" height="4" fill="currentColor" />
-                  <rect x="16" y="8" width="4" height="4" fill="currentColor" />
-                  <rect x="16" y="12" width="4" height="4" fill="currentColor" />
-                  <rect x="12" y="16" width="4" height="4" fill="currentColor" />
-                  <rect x="8" y="16" width="4" height="4" fill="currentColor" />
-                </svg>
+  viewBox="0 0 32 32"
+  className="absolute inset-4 text-[#00ff00]/20"
+  fill="currentColor"
+>
+  {/* Left vertical bar */}
+  <rect x="4" y="4" width="4" height="4" />
+  <rect x="4" y="8" width="4" height="4" />
+  <rect x="4" y="12" width="4" height="4" />
+  <rect x="4" y="16" width="4" height="4" />
+  <rect x="4" y="20" width="4" height="4" />
+  <rect x="4" y="24" width="4" height="4" />
+
+  {/* Top bar */}
+  <rect x="8" y="4" width="4" height="4" />
+  <rect x="12" y="4" width="4" height="4" />
+
+  {/* Middle bar */}
+  <rect x="8" y="14" width="4" height="4" />
+  <rect x="12" y="14" width="4" height="4" />
+
+  {/* Bottom bar */}
+  <rect x="8" y="24" width="4" height="4" />
+  <rect x="12" y="24" width="4" height="4" />
+
+  {/* Right curve */}
+  <rect x="16" y="8" width="4" height="4" />
+  <rect x="16" y="12" width="4" height="4" />
+  <rect x="16" y="18" width="4" height="4" />
+  <rect x="16" y="22" width="4" height="4" />
+</svg>
+
 
                 {/* Corner decorations */}
                 <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#00ff00]" />
