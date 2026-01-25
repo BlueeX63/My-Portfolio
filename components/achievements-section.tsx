@@ -21,7 +21,7 @@ const achievements = [
   {
     icon: Code,
     title: "50+ Contributions",
-    description: "Active GitHub contributor and open-source Web3 developer",
+    description: "Active GitHub contributor and open-source Web2 developer",
     color: "#00ff00",
     gradient: "from-[#00ff00] to-[#00cc00]",
   },
