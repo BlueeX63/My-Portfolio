@@ -14,7 +14,7 @@ const achievements = [
   {
     icon: Users,
     title: "3500+ Community",
-    description: "Founder of Builder Base - India's premier Web3 community",
+    description: "Co-founder of Sip&Sow",
     color: "#00ff00",
     gradient: "from-[#00ff00] to-[#00cc00]",
   },
