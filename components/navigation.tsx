@@ -79,7 +79,7 @@ export function Navigation({ scrollY }: NavigationProps) {
               </a>
             ))}
             <a
-              href="mailto:bhavitraj@gmail.com"
+              href="mailto:quorvoxed@gmail.com"
               className="ml-2 xl:ml-4 px-3 xl:px-4 py-2 text-[7px] xl:text-[8px] font-pixel bg-[#00ff00] text-black hover:bg-[#00ff00]/80 transition-colors animate-pulse-glow"
             >
               HIRE_ME
