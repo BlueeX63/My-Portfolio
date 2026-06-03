@@ -64,7 +64,7 @@ export function CTASection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <a
-              href="mailto:bhavitraj@gmail.com"
+              href="mailto:quorvoxed@gmail.com"
               className="group px-8 py-3 bg-[#00ff00] text-black text-[9px] font-pixel hover:bg-[#00ff00]/80 transition-all animate-pulse-glow flex items-center gap-2"
             >
               <Mail className="w-4 h-4" />
@@ -96,7 +96,7 @@ export function CTASection() {
                     href="mailto:founder@builderbase.xyz"
                     className="text-[8px] font-pixel text-[#00ff00] hover:text-glow transition-all"
                   >
-                    bhavitraj@gmail.com
+                    quorvoxed@gmail.com
                   </a>
                 </div>
               </div>

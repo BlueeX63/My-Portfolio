@@ -19,13 +19,13 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase:new URL(process.env.NEXT_PUBLIC_URL!),
   title: {
-    default: "Bhavit Rajput - Full stack developer",
-    template: "%s | Bhavit Raj Portfolio",
+    default: "Bluee - Full stack developer",
+    template: "%s | Bluee Portfolio",
   },
   description:
-    "Bhavit Raj is a full-stack developer and startup founder specializing in React, Next.js, TypeScript, and scalable e-commerce platforms. Passionate about UI/UX, gamified experiences, and building impactful digital products.",
+    "Bluee is a full-stack developer and startup founder specializing in React, Next.js, TypeScript, and scalable e-commerce platforms. Passionate about UI/UX, gamified experiences, and building impactful digital products.",
   keywords: [
-    "Bhavit Raj",
+    "Bluee",
     "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     "Web Developer India",
     "Portfolio",
   ],
-  authors: [{ name: "Bhavit Rajput", url: process.env.NEXT_PUBLIC_URL! }],
-  creator: "Bhavit Rajput",
-  publisher: "Bhavit Rajput",
+  authors: [{ name: "Bluee", url: process.env.NEXT_PUBLIC_URL! }],
+  creator: "Bluee",
+  publisher: "Bluee",
   formatDetection: {
     email: false,
     address: false,
@@ -50,16 +50,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_URL!,
-    title: "Bhavit Raj - Full Stack Developer & Startup Builder",
+    title: "Bluee - Full Stack Developer & Startup Builder",
     description:
-      "Portfolio of Bhavit Raj | Full-stack developer | Startup builder | Expert in React, Next.js, TypeScript, and scalable e-commerce solutions.",
-    siteName: "Bhavit Raj Portfolio",
+      "Portfolio of Bluee | Full-stack developer | Startup builder | Expert in React, Next.js, TypeScript, and scalable e-commerce solutions.",
+    siteName: "Bluee Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Bhavit Raj Portfolio",
+        alt: "Bluee Portfolio",
       },
     ],
   },
@@ -102,7 +102,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Bhavit Raj",
+    name: "Bluee",
     url: process.env.NEXT_PUBLIC_URL!,
     image: "https://yourdomain.com/og-image.png",
     sameAs: [

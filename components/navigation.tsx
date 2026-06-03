@@ -115,7 +115,7 @@ export function Navigation({ scrollY }: NavigationProps) {
             </a>
           ))}
           <a
-            href="mailto:bhavitraj@gmail.com"
+            href="mailto:quorvoxed@gmail.com"
             onClick={() => setMobileMenuOpen(false)}
             className="block mt-3 py-3 text-[8px] font-pixel text-center bg-[#00ff00] text-black"
           >

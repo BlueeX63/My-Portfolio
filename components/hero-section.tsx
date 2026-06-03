@@ -6,7 +6,7 @@ import { ArrowRight, ChevronDown } from "lucide-react"
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [typedText, setTypedText] = useState("")
-  const fullText = "WEB2 BUILDER_"
+  const fullText = "WEB DEVELOPER_"
 
   useEffect(() => {
     setIsVisible(true)
@@ -72,7 +72,7 @@ export function HeroSection() {
             }`}
         >
           <h2 className="font-pixel text-white tracking-wider" style={{ fontSize: 'clamp(14px, 3vw, 24px)' }}>
-            BHAVIT RAJPUT
+            BLUEE
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mt-4 text-[7px] sm:text-[8px] font-pixel text-white/50 px-2">
             <span className="text-[#00ff00]">{">"}  2X HACKATHON WINNER</span>

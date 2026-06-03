@@ -38,7 +38,7 @@ export function Footer() {
             <div className="space-y-3">
               <div>
                 <p className="text-[7px] font-pixel text-white/40 mb-1">NAME</p>
-                <p className="text-[9px] font-pixel text-white">BHAVIT RAJPUT</p>
+                <p className="text-[9px] font-pixel text-white">BLUEE</p>
               </div>
               <div>
                 <p className="text-[7px] font-pixel text-white/40 mb-1">SPECIALIZATION</p>
