@@ -19,8 +19,8 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase:new URL(process.env.NEXT_PUBLIC_URL!),
   title: {
-    default: "Bluee - Full stack developer",
-    template: "%s | Bluee Portfolio",
+    default: "bluee - web 2",
+    template: "%s | bluee - web 2",
   },
   description:
     "Bluee is a full-stack developer and startup founder specializing in React, Next.js, TypeScript, and scalable e-commerce platforms. Passionate about UI/UX, gamified experiences, and building impactful digital products.",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_URL!,
-    title: "Bluee - Full Stack Developer & Startup Builder",
+    title: "bluee - web 2",
     description:
       "Portfolio of Bluee | Full-stack developer | Startup builder | Expert in React, Next.js, TypeScript, and scalable e-commerce solutions.",
     siteName: "Bluee Portfolio",
