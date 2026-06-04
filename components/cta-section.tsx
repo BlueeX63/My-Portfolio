@@ -47,7 +47,7 @@ export function CTASection() {
               <div className="w-2 h-2 bg-[#ff0000]" />
               <div className="w-2 h-2 bg-[#ffff00]" />
               <div className="w-2 h-2 bg-[#00ff00]" />
-              <span className="ml-4 text-[7px] font-pixel text-white/50">contact@punit:~$</span>
+              <span className="ml-4 text-[7px] font-pixel text-white/50">contact@Bluee:~$</span>
             </div>
           </div>
 

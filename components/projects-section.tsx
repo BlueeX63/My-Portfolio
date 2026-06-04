@@ -13,6 +13,7 @@ const projects = [
     links: {
       site: null,
       twitter: "https://twitter.com/X402_VPN",
+      github: null,
     },
   },
   {
@@ -23,6 +24,7 @@ const projects = [
     badges: ["HACKATHON_WINNER", "AVALANCHE"],
     links: {
       site: "https://www.pyvax.xyz/",
+      twitter: null,
       github: null,
     },
   },
@@ -34,18 +36,7 @@ const projects = [
     badges: ["DEV_TOOL", "WEB3"],
     links: {
       site: "https://zerothon.vercel.app/",
-      github: null,
-    },
-  },
-  {
-    title: "BUILDER_BASE",
-    subtitle: "India's Web3 & AI Community",
-    description: "Built and scaled community from 0 to 3500+ elite builders. Contributed 5+ major hackathons across India.",
-    techStack: ["Community", "Events", "Partnerships", "Growth"],
-    badges: ["FOUNDER", "3500+_MEMBERS"],
-    impact: "3500+ members | 20+ events ",
-    links: {
-      site: "https://builderbase.xyz",
+      twitter: null,
       github: null,
     },
   },
@@ -175,13 +166,6 @@ export function ProjectsSection() {
                   {">"} {project.description}
                 </p>
 
-                {/* Impact */}
-                {project.impact && (
-                  <div className="flex items-center gap-2 text-[8px] font-pixel text-[#00ff00]/70 mb-4">
-                    <span className="w-1.5 h-1.5 bg-[#00ff00] animate-pulse" />
-                    {project.impact}
-                  </div>
-                )}
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2">
@@ -205,7 +189,7 @@ export function ProjectsSection() {
             }`}
         >
           <a
-            href="https://github.com/ShahiTechnovation/"
+            href="https://github.com/BlueeX63/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-[#00ff00]/50 text-[8px] font-pixel text-[#00ff00] hover:bg-[#00ff00]/10 transition-all"

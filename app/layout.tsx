@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_URL!,
-    title: "bluee - web 2",
+    title: "BLUEE - FULL STACK DEVELOPER",
     description:
-      "Portfolio of Bluee | Full-stack developer | Startup builder | Expert in React, Next.js, TypeScript, and scalable e-commerce solutions.",
+      "BLUEE | Full Stack Developer | Startup Builder | React, Next.js, TypeScript Expert",
     siteName: "Bluee Portfolio",
     images: [
       {
