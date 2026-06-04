@@ -12,7 +12,7 @@ const socialLinks = [
   },
   {
     name: "Email",
-    href: "mailto:bhavitraj@gmail.com",
+    href: "mailto:quorvoxed@gmail.com",
     icon: Mail,
     hoverColor: '#00fff0',
   },
@@ -79,7 +79,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-[#222] pt-6 text-center">
           <p className="text-[7px] font-pixel text-white/40 mb-2">
-            <span className="text-[#00ff00]">{"<"}</span> © {new Date().getFullYear()} BHAVIT_RAJPUT <span className="text-[#00ff00]">{"/>"}</span>
+            <span className="text-[#00ff00]">{"<"}</span> © {new Date().getFullYear()} BLUEE <span className="text-[#00ff00]">{"/>"}</span>
           </p>
           <p className="text-[6px] font-pixel text-white/30">
             BUILT_WITH <span className="text-[#00ff00]">{"{ WEB2, PASSION, CODE }"}</span>
