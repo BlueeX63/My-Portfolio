@@ -131,9 +131,7 @@ export function AboutSection() {
                 <span className="text-[#00ff00]">2 hackathons</span>
               </p>
 
-              <p>
-                {">"} Co-Founder of <span className="text-[#00ff00]">Sip&Sow</span> - India&apos;s aspiring startup focusing on<span className="text-white"> sustainable development</span>.
-              </p>
+              
 
               <p>
                 {">"} Focus: Full-stack Web development, strategic partnerships, and full-stack App development.
