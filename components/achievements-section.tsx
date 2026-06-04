@@ -13,8 +13,8 @@ const achievements = [
   },
   {
     icon: Users,
-    title: "3500+ Community",
-    description: "Co-founder of Sip&Sow",
+    title: "300+ Community",
+    description: "Nexido",
     color: "#00ff00",
     gradient: "from-[#00ff00] to-[#00cc00]",
   },
