@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Bluee Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.png?v=1",
         width: 1200,
         height: 630,
         alt: "Bluee Portfolio",
