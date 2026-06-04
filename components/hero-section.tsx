@@ -48,7 +48,7 @@ export function HeroSection() {
             <div className="w-2 h-2 bg-[#ff0000]" />
             <div className="w-2 h-2 bg-[#ffff00]" />
             <div className="w-2 h-2 bg-[#00ff00]" />
-            <span className="ml-2 sm:ml-4 text-[7px] sm:text-[8px] font-pixel text-white/50">bhavit@web2:~$</span>
+            <span className="ml-2 sm:ml-4 text-[7px] sm:text-[8px] font-pixel text-white/50">bluee@web2:~$</span>
           </div>
         </div>
 
