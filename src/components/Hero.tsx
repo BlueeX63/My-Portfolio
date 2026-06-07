@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, Float, MeshTransmissionMaterial, Torus } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -26,17 +27,30 @@ function GlassShape() {
 }
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-background">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0 opacity-80">
-        <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
-          <Environment preset="city" />
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 10]} intensity={1} />
-          <directionalLight position={[-10, -10, -10]} intensity={0.5} color="#ffffff" />
-          <GlassShape />
-        </Canvas>
+        {!isMobile && (
+          <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 1.5]}>
+            <Environment preset="city" />
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[10, 10, 10]} intensity={1} />
+            <directionalLight position={[-10, -10, -10]} intensity={0.5} color="#ffffff" />
+            <GlassShape />
+          </Canvas>
+        )}
       </div>
 
       {/* Content */}

@@ -51,12 +51,9 @@ export default function Contact() {
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
               className="space-y-4 text-lg font-light tracking-widest uppercase"
             >
-              <a href="mailto:bhavitraj@gmail.com" className="block text-white/80 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all w-fit">
-                bhavitraj@gmail.com
+              <a href="mailto:quorvoxed@gmail.com" className="block text-white/80 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all w-fit">
+                quorvoxed@gmail.com
               </a>
-              <p className="block text-white/80 transition-all w-fit">
-                +91 6397491992
-              </p>
               <div className="flex gap-8 pt-8">
                 <a href="https://linkedin.com/in/bhavit-rajput-10653b389/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all">
                   <LinkedinIcon size={24} />

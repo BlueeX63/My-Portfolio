@@ -8,6 +8,17 @@ export default function LoadingScreen() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [loading]);
+
+  useEffect(() => {
     // Simulate loading progress
     const interval = setInterval(() => {
       setProgress(prev => {
