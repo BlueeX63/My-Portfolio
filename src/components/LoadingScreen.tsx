@@ -49,12 +49,12 @@ export default function LoadingScreen() {
           className="fixed inset-0 z-[99999] bg-background flex flex-col items-center justify-center overflow-hidden"
         >
           {/* Main Title Reveal */}
-          <div className="overflow-hidden mb-12">
+          <div className="overflow-hidden mb-12 py-2 -my-2">
             <motion.h1 
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="font-heading text-4xl md:text-6xl uppercase tracking-tighter"
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} // Expo ease out for buttery smoothness
+              className="font-heading text-4xl md:text-6xl uppercase tracking-tighter will-change-transform"
             >
               BHAVIT RAJPUT
             </motion.h1>
