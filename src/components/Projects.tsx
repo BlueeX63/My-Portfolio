@@ -44,8 +44,6 @@ const projects = [
 // Card width: 50vw on desktop, 80vw on mobile. Gap: 4rem (64px).
 // We need roughly (numCards * cardWidth + gaps) of horizontal distance.
 // The wrapper height creates the vertical scroll runway that maps to horizontal movement.
-const CARD_WIDTH_VW = 50;
-const CARD_GAP_PX = 64;
 
 export default function Projects() {
   const wrapperRef = useRef<HTMLDivElement>(null);

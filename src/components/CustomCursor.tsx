@@ -11,7 +11,7 @@ export default function CustomCursor() {
   useEffect(() => {
     // Only enable custom cursor on devices with a fine pointer (mouse)
     if (window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768) {
-      setIsMobile(true);
+      setTimeout(() => setIsMobile(true), 0);
       return;
     }
 

@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import Image from 'next/image';
 
 const TEXT_CONTENT = "I don't just build websites; I engineer secure digital foundations. As a full-stack developer with a deep focus on cybersecurity, I craft high-performance, robust platforms that can withstand the modern web. My mission is to empower small startups, providing them with enterprise-grade web solutions at accessible prices. Every line of code is written with purpose, blending flawless design with impenetrable architecture to help your business scale safely.";
 
@@ -39,7 +40,6 @@ export default function About() {
           <div className="text-2xl md:text-4xl font-light leading-snug tracking-tight text-white flex flex-wrap gap-x-2 gap-y-1">
             {words.map((word, i) => {
               const start = i / words.length;
-              const end = start + (1 / words.length);
               // Calculate opacity based on scroll progress passing this word's threshold
               // We map a small window of scroll progress to fade this word in
               // For simplicity in this static map, we will just use a stagger reveal on view
@@ -72,10 +72,11 @@ export default function About() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <img 
+              <Image 
                 src="/images/me.jpeg" 
                 alt="Vision Abstract" 
-                className="w-full h-full object-cover rounded-2xl filter grayscale-[50%]  transition-all duration-1000"
+                fill
+                className="object-cover rounded-2xl filter grayscale-[50%] transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none rounded-2xl"></div>
             </motion.div>

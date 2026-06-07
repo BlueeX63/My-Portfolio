@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 
 const GithubIcon = ({ size = 24 }: { size?: number }) => (
@@ -18,6 +19,39 @@ const LinkedinIcon = ({ size = 24 }: { size?: number }) => (
 );
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+    
+    setStatus('loading');
+    setErrorMessage('');
+    
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || 'Failed to send message');
+      }
+      
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000); // Reset status after 5s
+    } catch (err: any) {
+      console.error(err);
+      setStatus('error');
+      setErrorMessage(err.message || 'Something went wrong. Please try again.');
+    }
+  };
+
   return (
     <section id="contact" className="py-32 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -32,7 +66,7 @@ export default function Contact() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="font-heading text-5xl md:text-8xl uppercase tracking-tighter mb-8 leading-none text-white"
             >
-              Let's <br /> <span className="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.3)] md:[-webkit-text-stroke:2px_rgba(255,255,255,0.3)]">Talk</span>
+              Let&apos;s <br /> <span className="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.3)] md:[-webkit-text-stroke:2px_rgba(255,255,255,0.3)]">Talk</span>
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -41,7 +75,7 @@ export default function Contact() {
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
               className="text-xl md:text-2xl font-light text-white/60 mb-12 max-w-md"
             >
-              Ready to engineer something extraordinary? Send a message and let's shape the future.
+              Ready to engineer something extraordinary? Send a message and let&apos;s shape the future.
             </motion.p>
 
             <motion.div 
@@ -75,12 +109,15 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               className="space-y-10" 
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div className="relative group">
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
                   className="peer w-full bg-transparent border-b border-white/20 py-4 text-xl font-light text-white focus:outline-none focus:border-white transition-colors placeholder-transparent"
                   placeholder="Name"
                 />
@@ -96,6 +133,9 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
                   className="peer w-full bg-transparent border-b border-white/20 py-4 text-xl font-light text-white focus:outline-none focus:border-white transition-colors placeholder-transparent"
                   placeholder="Email"
                 />
@@ -111,6 +151,9 @@ export default function Contact() {
                 <textarea
                   id="message"
                   rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  required
                   className="peer w-full bg-transparent border-b border-white/20 py-4 text-xl font-light text-white focus:outline-none focus:border-white transition-colors placeholder-transparent resize-none"
                   placeholder="Message"
                 ></textarea>
@@ -122,10 +165,64 @@ export default function Contact() {
                 </label>
               </div>
 
-              <div className="pt-8 flex justify-end">
-                <MagneticButton className="px-12 py-5 text-sm">
-                  Send Message
-                </MagneticButton>
+              <div className="pt-8 flex justify-end items-center gap-4 h-24">
+                <AnimatePresence mode="wait">
+                  {status === 'idle' || status === 'error' ? (
+                    <motion.div
+                      key="form-btn"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      className="flex items-center gap-4"
+                    >
+                      {status === 'error' && (
+                        <span className="text-red-400 text-sm tracking-widest uppercase">{errorMessage}</span>
+                      )}
+                      <MagneticButton className="px-12 py-5 text-sm">
+                        Send Message
+                      </MagneticButton>
+                    </motion.div>
+                  ) : status === 'loading' ? (
+                    <motion.div
+                      key="loading-btn"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                    >
+                      <div className="px-12 py-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md flex items-center gap-3">
+                        <motion.div 
+                          animate={{ rotate: 360 }} 
+                          transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                          className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full"
+                        />
+                        <span className="text-sm uppercase tracking-widest text-white/70">Encrypting...</span>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="success-btn"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                    >
+                      <div className="px-12 py-5 rounded-full border border-green-500/50 bg-green-500/10 backdrop-blur-md flex items-center gap-3 shadow-[0_0_30px_rgba(34,197,94,0.2)]">
+                        <motion.svg 
+                          initial={{ pathLength: 0 }} 
+                          animate={{ pathLength: 1 }} 
+                          transition={{ duration: 0.5, delay: 0.2 }}
+                          className="w-6 h-6 text-green-400" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor" 
+                          strokeWidth="2"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </motion.svg>
+                        <span className="text-sm uppercase tracking-widest text-green-400 font-medium">Transmission Sent</span>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </motion.form>
           </div>

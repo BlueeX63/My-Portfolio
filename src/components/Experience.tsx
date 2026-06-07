@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, MotionValue } from 'framer-motion';
 
 const experiences = [
   {
@@ -34,7 +34,7 @@ function ExperienceCard({
 }: {
   experience: typeof experiences[0];
   index: number;
-  progress: any;
+  progress: MotionValue<number>;
 }) {
   const total = experiences.length;
   // Each card gets an equal slice of the scroll progress

@@ -9,6 +9,7 @@ interface SmoothScrollProps {
 }
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const lenisRef = useRef<any>(null);
 
   useEffect(() => {
