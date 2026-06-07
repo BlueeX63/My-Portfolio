@@ -26,8 +26,10 @@ export default function RootLayout({
       className={`${inter.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        <LoadingScreen />
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <LoadingScreen />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

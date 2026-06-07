@@ -2,21 +2,26 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLenis } from 'lenis/react';
 
 export default function LoadingScreen() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
+  const lenis = useLenis();
 
   useEffect(() => {
     if (loading) {
       document.body.style.overflow = 'hidden';
+      lenis?.stop();
     } else {
       document.body.style.overflow = '';
+      lenis?.start();
     }
     return () => {
       document.body.style.overflow = '';
+      lenis?.start();
     };
-  }, [loading]);
+  }, [loading, lenis]);
 
   useEffect(() => {
     // Simulate loading progress
