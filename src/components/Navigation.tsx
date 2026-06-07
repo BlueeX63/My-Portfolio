@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { useLenis } from 'lenis/react';
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const lenis = useLenis();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,16 @@ export default function Navigation() {
     { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (lenis) {
+      lenis.scrollTo(href);
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMenuOpen(false);
+  };
 
   return (
     <>
@@ -43,6 +55,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-medium tracking-widest uppercase hover:text-accent transition-colors relative group"
               >
                 {link.name}
@@ -88,7 +101,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
                 >
-                  <Link href={link.href} onClick={() => setMenuOpen(false)} className="hover:text-accent transition-colors">
+                  <Link href={link.href} onClick={(e) => handleNavClick(e, link.href)} className="hover:text-accent transition-colors">
                     {link.name}
                   </Link>
                 </motion.div>

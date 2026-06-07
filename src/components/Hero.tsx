@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, Float, MeshTransmissionMaterial, Torus } from '@react-three/drei';
 import { motion } from 'framer-motion';
+import { useLenis } from 'lenis/react';
 import MagneticButton from './MagneticButton';
 
 function GlassShape() {
@@ -28,6 +29,15 @@ function GlassShape() {
 
 export default function Hero() {
   const [isMobile, setIsMobile] = useState(false);
+  const lenis = useLenis();
+
+  const handleProjectsClick = () => {
+    if (lenis) {
+      lenis.scrollTo('#projects');
+    } else {
+      document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const checkMobile = () => {
@@ -74,10 +84,11 @@ export default function Hero() {
         </motion.p>
 
         <motion.div 
-          className="mt-16 pointer-events-auto"
+          className="mt-16 pointer-events-auto cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
+          onClick={handleProjectsClick}
         >
           <MagneticButton>
             View Projects
