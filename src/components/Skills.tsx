@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-  "Java", "Python", "JavaScript", "C", "React", "Redux", 
-  "Tailwind CSS", "Framer Motion", "Node.js", "Express.js", 
-  "MongoDB", "MySQL", "NumPy", "Pandas", "Cybersecurity", 
+  "Java", "Python", "JavaScript", "C", "React", "Redux",
+  "Tailwind CSS", "Framer Motion", "Node.js", "Express.js",
+  "MongoDB", "MySQL", "NumPy", "Pandas", "Cybersecurity",
   "Penetration Testing", "Burp Suite", "Nmap", "Wireshark", "Git"
 ];
 
@@ -15,7 +15,7 @@ const SkillGroup = () => (
     {skills.map((skill, index) => (
       <div
         key={index}
-        className="px-8 py-5 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-xl md:text-2xl font-light tracking-wide text-white/80 hover:bg-white/10 hover:text-white hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all duration-500 cursor-pointer flex-shrink-0"
+        className="px-8 py-5 bg-white/10 rounded-full border border-white/10 text-xl md:text-2xl font-light tracking-wide text-white/80 hover:bg-white/20 hover:text-white hover:border-white/30 transition-all duration-500 cursor-pointer flex-shrink-0"
       >
         {skill}
       </div>
@@ -37,25 +37,36 @@ export default function Skills() {
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          @keyframes scroll-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+          }
+          .animate-scroll-left {
+            animation: scroll-left 40s linear infinite;
+            will-change: transform;
+          }
+          .animate-scroll-right {
+            animation: scroll-right 50s linear infinite;
+            will-change: transform;
+          }
+        `}} />
+
         {/* Row 1: Moves Left */}
-        <motion.div
-          className="flex w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
-        >
+        <div className="flex w-max animate-scroll-left">
           <SkillGroup />
           <SkillGroup />
-        </motion.div>
+        </div>
 
         {/* Row 2: Moves Right */}
-        <motion.div
-          className="flex w-max"
-          animate={{ x: ["-50%", "0%"] }}
-          transition={{ duration: 50, ease: "linear", repeat: Infinity }}
-        >
+        <div className="flex w-max animate-scroll-right">
           <SkillGroup />
           <SkillGroup />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

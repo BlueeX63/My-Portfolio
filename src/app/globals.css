@@ -3,7 +3,8 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --accent: #ffffff; /* Apple style pure white accent */
+  --accent: #ffffff;
+  /* Apple style pure white accent */
   --accent-foreground: #000000;
   --muted: #111111;
   --muted-foreground: #888888;
@@ -19,7 +20,6 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --font-sans: var(--font-inter);
-  --font-heading: var(--font-inter);
 }
 
 body {
@@ -31,13 +31,20 @@ body {
 }
 
 /* Typography Overrides */
-h1, h2, h3, h4, h5, h6, .font-heading {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
   letter-spacing: -0.04em;
   font-weight: 600;
 }
 
 /* Lenis Smooth Scroll Styles */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 

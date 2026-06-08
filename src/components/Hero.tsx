@@ -65,7 +65,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center flex flex-col items-center pointer-events-none mt-16">
-        <motion.h1 
+        <motion.h1
           className="font-heading text-[12vw] md:text-[9vw] font-semibold tracking-tighter leading-none whitespace-nowrap text-white drop-shadow-2xl"
           initial={{ opacity: 0, y: 40, filter: 'blur(10px)', scale: 0.95 }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
@@ -73,7 +73,7 @@ export default function Hero() {
         >
           BHAVIT RAJPUT
         </motion.h1>
-        
+
         <motion.p
           className="mt-6 text-lg md:text-2xl font-light tracking-wide text-muted-foreground/80 max-w-2xl px-6"
           initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ export default function Hero() {
           Cyber Security <span className="text-white mx-2 opacity-50">•</span> Full Stack Developer
         </motion.p>
 
-        <motion.div 
+        <motion.div
           className="mt-16 pointer-events-auto cursor-pointer"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
