@@ -69,3 +69,17 @@ html.lenis body {
   background-color: rgba(255, 255, 255, 0.2);
   color: var(--foreground);
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* Internet Explorer and old Edge */
+body {
+  -ms-overflow-style: none;
+}
