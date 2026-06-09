@@ -75,7 +75,7 @@ function ExperienceCard({
       }}
       className="absolute inset-0 origin-top perspective-[2000px]"
     >
-      <div className="w-full h-full rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-3xl p-8 md:p-16 flex flex-col justify-between shadow-[0_30px_60px_rgba(255,255,255,0.03)] overflow-hidden">
+      <div className="w-full h-full rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-3xl p-6 sm:p-8 md:p-16 flex flex-col justify-between shadow-[0_30px_60px_rgba(255,255,255,0.03)] overflow-hidden">
         {/* Decorative huge number */}
         <div className="absolute -right-4 -bottom-10 font-heading text-[15rem] font-bold text-white/5 pointer-events-none select-none">
           0{index + 1}
@@ -85,16 +85,16 @@ function ExperienceCard({
           <p className="text-white/80 border-white/20 uppercase tracking-[0.1em] text-sm md:text-base font-medium border rounded-full px-6 py-2 bg-white/5 backdrop-blur-md">
             {experience.period}
           </p>
-          <h4 className="text-xl md:text-2xl font-medium text-white/50 uppercase tracking-[0.2em]">
+          <h4 className="text-lg md:text-2xl font-medium text-white/50 uppercase tracking-[0.2em]">
             {experience.company}
           </h4>
         </div>
 
         <div className="relative z-10 mt-auto">
-          <h3 className="font-heading text-4xl md:text-6xl uppercase tracking-tighter mb-6 leading-none text-white drop-shadow-lg">
+          <h3 className="font-heading text-3xl sm:text-4xl md:text-6xl uppercase tracking-tighter mb-4 md:mb-6 leading-none text-white drop-shadow-lg">
             {experience.role}
           </h3>
-          <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-base md:text-xl text-white/70 font-light leading-relaxed max-w-2xl">
             {experience.description}
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function Experience() {
         </div>
 
         <div className="flex-1 flex items-center justify-center px-6 md:px-0 relative">
-          <div className="w-full max-w-5xl h-[65vh] relative">
+          <div className="w-full max-w-5xl h-[70vh] md:h-[65vh] relative">
             {experiences.map((exp, index) => (
               <ExperienceCard
                 key={exp.id}
