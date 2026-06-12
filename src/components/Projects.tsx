@@ -3,27 +3,37 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
-const projects = [
+const projects: Array<{
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  year: string;
+  link?: string;
+}> = [
   {
     id: 1,
     title: "FOREVER E-Commerce",
     category: "Full Stack Platform",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-    year: "MERN Stack"
+    year: "MERN Stack",
+    link: "https://forever-ashy.vercel.app/"
   },
   {
     id: 2,
-    title: "GenZ AI",
+    title: "VOID AI",
     category: "AI Productivity Platform",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
-    year: "Claude API"
+    year: "Claude API",
+    link: "https://void-xi-five.vercel.app"
   },
   {
     id: 3,
-    title: "Exam Prep Web App",
-    category: "EdTech Platform",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200&auto=format&fit=crop",
-    year: "MERN Stack"
+    title: "Demo Restaurant Website",
+    category: "Restaurant Website",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
+    year: "Frontend",
+    link: "https://demo-aurelia-restaurant.vercel.app/"
   },
   {
     id: 4,
@@ -85,6 +95,9 @@ export default function Projects() {
                 whileHover="hover"
                 initial="initial"
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                onClick={() => {
+                  if (project.link) window.open(project.link, '_blank');
+                }}
               >
                 <div className="absolute inset-0 w-full h-full overflow-hidden">
                   <motion.img 

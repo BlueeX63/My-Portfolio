@@ -70,16 +70,13 @@ html.lenis body {
   color: var(--foreground);
 }
 
-body::-webkit-scrollbar {
-  display: none;
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
-/* Firefox */
-body {
-  scrollbar-width: none;
-}
-
-/* Internet Explorer and old Edge */
-body {
-  -ms-overflow-style: none;
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
